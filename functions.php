@@ -34,7 +34,7 @@ add_filter('admin_footer_text', 'bones_custom_admin_footer');
 
 // Thumbnail sizes
 add_image_size( 'wpf-featured', 639, 300, true );
-add_image_size ( 'wpf-home-featured', 970, 364, true );
+add_image_size ( 'wpf-home-featured', 968, 381, true );
 add_image_size( 'bones-thumb-600', 600, 150, false );
 add_image_size( 'bones-thumb-300', 300, 100, true );
 /* 
@@ -97,6 +97,13 @@ function bones_register_sidebars() {
     sidebar-sidebar2.php
     
     */
+
+	// last but not least, allow child themes to register some
+	$child_sidebars = get_child_sidebars();
+	foreach ($child_sidebars as $childbar)
+	{
+		register_sidebar($childbar);
+	}
 } // don't remove this bracket!
 
 /************* ENQUEUE CSS AND JS *****************/
@@ -480,4 +487,29 @@ class footer_links_walker extends Walker_Nav_Menu
             }       
 } 
 
+if (! function_exists('get_child_sidebars'))
+{
+    function get_child_sidebars()
+    {
+        return array();
+    }
+}
+
+if (! function_exists('get_theme_banner'))
+{
+    function get_theme_banner()
+    {
+        echo '<h1><a class="brand" id="logo" href="' . get_bloginfo('url') . '>' . bloginfo('name') . '</a></h1>';
+        echo '<h4 class="subhead">' . get_bloginfo('description') . '</h4>';
+    }
+}
+
+if (! function_exists('get_favorite_icon'))
+{
+    function get_favorite_icon()
+	{
+		return get_template_directory_uri().'/favicon.ico';
+	}
+}
+				
 ?>

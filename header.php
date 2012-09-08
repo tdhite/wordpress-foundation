@@ -24,8 +24,8 @@
 		<!-- For Nokia -->
 		<link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/library/images/icons/l/apple-touch-icon.png">
 		<!-- For everything else -->
-		<link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/favicon.ico">
-				
+		<link rel="shortcut icon" href="<?php get_favorite_icon(); ?>">
+
 		<!-- media-queries.js (fallback) -->
 		<!--[if lt IE 9]>
 			<script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>			
@@ -142,8 +142,7 @@
 				<header role="banner" id="top-header">
 					
 					<div class="siteinfo">
-						<h1><a class="brand" id="logo" href="<?php echo get_bloginfo('url'); ?>"><?php bloginfo('name'); ?></a></h1>
-						<h4 class="subhead"><?php echo get_bloginfo ( 'description' ); ?></h4>
+						<?php get_theme_banner(); ?>
 					</div>
 			
 					<?php bones_main_nav(); // Adjust using Menus in Wordpress Admin ?>

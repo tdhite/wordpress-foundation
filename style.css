@@ -172,6 +172,21 @@ img.aligncenter{
 	margin: 0 auto;
 }
 
+.alignleft{
+	margin-right: 10px;
+	float: left;
+}
+
+.alignright{
+	margin-left: 10px;
+	float: right;
+}
+
+.aligncenter{
+	display: block;
+	margin: 0 auto;
+}
+
 p.tags a:hover{
 	color: #f0f0f0;
 }
