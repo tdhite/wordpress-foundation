@@ -24,6 +24,7 @@
 		<![endif]-->
 		
 		<?php wp_footer(); // js scripts are inserted using this function ?>
+		<?php get_local_footer_js(); // any local js scripts come here ?>
 
 	</body>
 
