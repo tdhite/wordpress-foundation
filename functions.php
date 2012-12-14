@@ -511,5 +511,12 @@ if (! function_exists('get_favorite_icon'))
 		return get_template_directory_uri().'/favicon.ico';
 	}
 }
-				
+
+if (! function_exists('get_footer_footer_js'))
+{
+    function get_footer_footer_js()
+	{
+		return true;
+	}
+}
 ?>
